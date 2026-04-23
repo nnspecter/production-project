@@ -6,6 +6,7 @@ import { classNames } from 'shared/lib/classNames/classNames'
 import { AboutPage } from 'pages/AboutPage'
 import { MainPage } from 'pages/MainPage'
 import { AppRouter } from './providers/router'
+import { Navbar } from 'widgets/Navbar'
 
 export enum Theme {
   LIGHT = 'light',
@@ -17,8 +18,7 @@ const App = () => {
   return (
     <div className={classNames("app", {}, [theme])}>
       <button onClick={toggleTheme}>SetTheme</button>
-      <Link to="/">Главная</Link>
-      <Link to="/about">О сайте</Link>
+      <Navbar/>
       <AppRouter/>
     </div>
   )
