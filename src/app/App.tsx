@@ -14,10 +14,10 @@ export enum Theme {
 }
 
 const App = () => {
-  const {theme, toggleTheme} = useTheme();
+  const {theme} = useTheme();
   return (
     <div className={classNames("app", {}, [theme])}>
-      <button onClick={toggleTheme}>SetTheme</button>
+      
       <Navbar/>
       <AppRouter/>
     </div>
