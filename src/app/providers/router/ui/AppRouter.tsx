@@ -10,11 +10,15 @@ export const AppRouter = () => {
         <Routes>
           
             {Object.values(routeConfig).map(({path, element})=>(
-              <Route path={path} element={element}></Route>
+              <Route key={`path-${path}`} path={path} element={(
+                <Suspense fallback={<div>Loading...</div>}>
+                  <div className='page-wrapper'>
+                    {element}
+                  </div></Suspense>
+              )}></Route>
             ))}
 
-            {/* <Route path={"/about"} element={<AboutPage/>}></Route>
-            <Route path={"/"} element={<MainPage/>}></Route> */}
+            
         </Routes>
       </Suspense>
   )
