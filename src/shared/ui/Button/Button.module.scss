@@ -9,6 +9,7 @@
     &.outlined {
         background: transparent;
         border: 1px solid var(--inverted-primary-color);
+        border-radius: 10;
     }
 
     &.clear {
