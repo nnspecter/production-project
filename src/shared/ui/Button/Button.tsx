@@ -23,3 +23,5 @@ export const Button = (props: MyButtonProps) => {
         </button>
     );
 };
+
+export { classNames };

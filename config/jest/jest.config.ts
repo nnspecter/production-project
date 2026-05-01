@@ -20,6 +20,13 @@ export default {
     coveragePathIgnorePatterns: [
         '\\\\node_modules\\\\',
     ],
+    transform: {
+        '\\.tsx?$': 'babel-jest',  
+    },
+    moduleNameMapper: {
+        '\\.scss$': 'identity-obj-proxy',
+        '\\.svg$': '<rootDir>config/jest/jestEmptyComponent.tsx',
+    },
     moduleFileExtensions: [
         'js',
         'jsx',
@@ -36,6 +43,8 @@ export default {
         '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)',
     ],
     rootDir: '../../',
+    modulePaths: ['<rootDir>src'],
+    setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts']
     // Indicates whether the coverage information should be collected while executing the test
     // collectCoverage: false,
 
